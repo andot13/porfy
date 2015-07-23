@@ -1,0 +1,24 @@
+{
+  "name": "andyaparece",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andot13/aa",
+  "authors": [
+    "Andy Aparece <andy.aparece@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "backbone-validation": "~0.11.5"
+  },
+  "devDependencies": {
+    "backbone": "~1.2.1",
+    "underscore": "~1.8.3"
+  }
+}
