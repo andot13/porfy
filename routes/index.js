@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mandrill = require('mandrill-api');
-var config = require('./config/index.js');
+var config = require('../config')(process.env.NODE_ENV);
 
 
 /* GET home page. */
