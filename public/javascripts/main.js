@@ -1,15 +1,15 @@
 $(window).scroll(function(){
 	if ($(window).width() > 1200) {
 		if ($(this).scrollTop() > 280) {
-			$('.project-info').addClass('fixed');
+			$('.project__viewer-info--non-fixed').addClass('fixed');
 		} else {
-			$('.project-info').removeClass('fixed');
+			$('.project__viewer-info--non-fixed').removeClass('fixed');
 		}
 	}
 	if ($(window).scrollTop() >= $(document).height() - $(window).height() - 900) {
-		$('.project-info').fadeOut(200);
+		$('.project__viewer-info--non-fixed').fadeOut(200);
 	}else{
-		$('.project-info').fadeIn(200);
+		$('.project__viewer-info--non-fixed').fadeIn(200);
 	}
 
 });
@@ -50,7 +50,7 @@ $(window).scroll(function(){
 
 
 	App.Views.ProjectViewer = Backbone.View.extend({
-		el: '.project-viewer',
+		el: '.project__viewer',
 		template: _.template(_.unescape($("#project-view-template").html()) ),
 
 		initialize: function(projectId){
@@ -68,12 +68,12 @@ $(window).scroll(function(){
 
 	App.Views.Projects = Backbone.View.extend({
 		tagName: 'div',
-		className: 'project-container',
+		className: 'project',
 
 
 		initialize: function(){
 
-			$(".project-container").append(this.render().el);
+			$(".project").append(this.render().el);
 		},
 
 		render: function(){
@@ -234,7 +234,7 @@ $(window).scroll(function(){
 
 
 	App.Views.ContactButtonShow = Backbone.View.extend({
-		el: '.contact',
+		el: '.navigation__item--contact',
 
 		initialize: function(){
 		},
@@ -296,7 +296,7 @@ $(window).scroll(function(){
 
 	App.Views.ContactView = Backbone.View.extend({
 		tagName: 'div',
-		className: 'contact-view',
+		className: 'contact__view',
 		template: _.template(_.unescape($("#contact-form").html()) ),
 
 		initialize: function(){
@@ -349,14 +349,14 @@ $(window).scroll(function(){
 						form.find('input[type="text"]').val('');
 						form.find('textarea[type="text"]').val('');
 						$(e.currentTarget).addClass('disabled').val('Sent');
-						$(e.currentTarget).next().addClass('flash-success').removeClass('hidden');
+						$(e.currentTarget).next().addClass('flash--success').removeClass('hidden');
 
 						// that.remove();
 					},
 					error: function(){
 						$(e.currentTarget).addClass('disabled').val('Send message');
 						$(e.currentTarget).next().html('An error occured. Please try again');
-						$(e.currentTarget).next().addClass('flash-error').removeClass('hidden');
+						$(e.currentTarget).next().addClass('flash--error').removeClass('hidden');
 						console.log("no");
 					}
 				});

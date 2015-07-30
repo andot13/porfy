@@ -2,114 +2,101 @@ extends layout
 
 block content
 
-	div.container
-		div.row
-			section.header-container
-				div.col-lg-9.col-md-9.col-sm-9.col-xs-12
-					header.logo-container
-						a(href="/")
-							h1.logo-name  Andy Aparece
-						h3.designation Designer / Frontend
-				nav.contact-btn-container.col-lg-3.col-md-3.col-sm-3.col-xs.3
-					a(href="").contact Contact me
-	div.project-viewer.container-fluid
-		div.row
-			script(id="project-view-template", type="text/template")
-				div.container.project-inner-viewer
-					div.col-lg-3.col-md-3.no-padding
-						div.project-info
-							h2 {{= projectTitle }}
-							p {{= projectDescription }}
-							p url: 
-								a(href="{{= projectUrl }}") {{= projectUrl }}
-							{{ if(projectRoles.length > 0) { }}
-							h3 Responsibilities
-							ul 
-								{{ for(var role in projectRoles) { }}
-								li {{= projectRoles[role] }}
-								{{ } }}
-								{{ } }}
-					div.col-lg-9.col-md-9
-						{{ if(projectScreen1) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen1}}")
+	section.header
+		header.header__container
+			a(href="/")
+				h1.header__logo  Andy Aparece
+			h3.header__designation Designer / Frontend
+		nav.navigation
+			a(href="").navigation__item--contact Contact me
+	div.project__viewer
+		script(id="project-view-template", type="text/template")
+			div.project__viewer-info
+				div.project__viewer-info--non-fixed
+					h2 {{= projectTitle }}
+					p {{= projectDescription }}
+					p url: 
+						a(href="{{= projectUrl }}") {{= projectUrl }}
+					{{ if(projectRoles.length > 0) { }}
+					h3 Responsibilities
+					ul 
+						{{ for(var role in projectRoles) { }}
+						li {{= projectRoles[role] }}
 						{{ } }}
-						{{ if(projectScreen2) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen2}}")
 						{{ } }}
-						{{ if(projectScreen3) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen3}}")
-						{{ } }}
-						{{ if(projectScreen4) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen4}}")
-						{{ } }}
-						{{ if(projectScreen5) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen5}}")
-						{{ } }}
-						{{ if(projectScreen6) { }}
-						div.col-lg-6.project-image-container
-							img.img-responsive(src="{{=projectScreen6}}")
-						{{ } }}
-						{{ if(projectScreen7) { }}
-						div.col-lg-6.project-image-container
-							img.img-responsive(src="{{=projectScreen7}}")
-						{{ } }}
-						{{ if(projectScreen8) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen8}}")
-						{{ } }}
-						{{ if(projectScreen9) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen9}}")
-						{{ } }}
-						{{ if(projectScreen10) { }}
-						div.col-lg-12.project-image-container
-							img.img-responsive(src="{{=projectScreen10}}")
-						{{ } }}
+			div.project__viewer-images
+				{{ if(projectScreen1) { }}
+				div
+					img.img-responsive(src="{{=projectScreen1}}")
+				{{ } }}
+				{{ if(projectScreen2) { }}
+				div
+					img.img-responsive(src="{{=projectScreen2}}")
+				{{ } }}
+				{{ if(projectScreen3) { }}
+				div
+					img.img-responsive(src="{{=projectScreen3}}")
+				{{ } }}
+				{{ if(projectScreen4) { }}
+				div
+					img.img-responsive(src="{{=projectScreen4}}")
+				{{ } }}
+				{{ if(projectScreen5) { }}
+				div
+					img.img-responsive(src="{{=projectScreen5}}")
+				{{ } }}
+				{{ if(projectScreen6) { }}
+				div.col-lg-6.project-image-container
+					img.img-responsive(src="{{=projectScreen6}}")
+				{{ } }}
+				{{ if(projectScreen7) { }}
+				div.col-lg-6.project-image-container
+					img.img-responsive(src="{{=projectScreen7}}")
+				{{ } }}
+				{{ if(projectScreen8) { }}
+				div
+					img.img-responsive(src="{{=projectScreen8}}")
+				{{ } }}
+				{{ if(projectScreen9) { }}
+				div
+					img.img-responsive(src="{{=projectScreen9}}")
+				{{ } }}
+				{{ if(projectScreen10) { }}
+				div.col-lg-12.project-image-container
+					img.img-responsive(src="{{=projectScreen10}}")
+				{{ } }}
 
-	div.container-fluid
-		div.row
-			section.project-container
-				script(id="project-template", type="text/template")
-					div.project-item.col-lg-6.col-md-6
-						header
-							div.project-details
-								h1.project-title {{= projectTitle }}
-								a.project-view(href="/project/{{= projectTitle }}", data-id="{{ projectTitle }}") Take a look 
-						div.overlay
-						img.img-responsive(src='{{= projectImage }}') 
-		section.footer
-	
+	section.project
+		script(id="project-template", type="text/template")
+			div.project__item
+				div.project__details
+					h2.project__title {{= projectTitle }}
+					a.project__view(href="/project/{{= projectTitle }}", data-id="{{ projectTitle }}") Take a look 
+				img.project__image(src='{{= projectImage }}') 
 	script(id="contact-form", type="text/template")
-		header.contact-header.col-lg-12
-		
+		header.contact__header
 			a.close(href="#")
 				img(src="/images/close.svg", onerror="this.onerror=null; this.src='/images/close.png'") 
-		section.contact-container.container
-			div.row
-				div.col-lg-5.col-lg-offset-2.col-md-5.col-md-offset-2.col-sm-7
-					h1 Get in touch
-					form(class="contact-form", action="/contact", method="post")
-						div.form-group
-							input(name="name" type="text" placeholder="Your name")
-						div.form-group
-							input(name="email" type="text" placeholder="Email")
-						div.form-group
-							textarea(name="message" type="text" placeholder="Please leave your message")
-						div.form-group
-							input.submit(type="submit" value="Send message")
-							span.flash-message.hidden Thank you! Your message has been sent.
-				aside.contact-sidebar.col-lg-3.col-lg-offset-1.col-md-3.col-offset-1.col-sm-4.col-sm-offset-1
-					div.aside-container.col-lg-12.col-md-12.col-sm-4.col-xs-5
-						p Skype
-						a andy.aparece
-					div.aside-container.col-lg-12.col-md-12.col-sm-12.col-xs-7
-						p Email
-						a andy.aparece@gmail.com
-					div.aside-container.col-lg-12.col-md-12.col-sm-12.col-xs-12
-						p Elsewhere
+		section
+			div.contact__form-container
+				h1 Get in touch
+				form(class="contact-form", action="/contact", method="post")
+					div.form-group
+						input.contact__form-container__input--text(name="name" type="text" placeholder="Your name")
+					div.form-group
+						input.contact__form-container__input--text(name="email" type="text" placeholder="Email")
+					div.form-group
+						textarea.contact__form-container__input--textarea(name="message" type="text" placeholder="Please leave your message")
+					div.form-group
+						input.submit.contact__form-container__input--submit(type="submit" value="Send message")
+						span.flash-message.hidden Thank you! Your message has been sent.
+			aside.contact__sidebar
+				div.contact__sidebar-container.contact__sidebar-container--skype
+					p Skype
+					a(href="") andy.aparece
+				div.contact__sidebar-container.contact__sidebar-container--email
+					p Email
+					a(href="") andy.aparece@gmail.com
+				div.contact__sidebar-container.contact__sidebar-container--elsewhere
+					p Elsewhere
 
