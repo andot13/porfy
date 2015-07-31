@@ -30,7 +30,12 @@ gulp.task('sass-dev', function(){
 	gulp.src('public/sass/**/*.scss')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+			includePaths: [
+			'bower_components/susy/sass',
+			'bower_components/breakpoint-sass/stylesheets'
+		  ]
+		}).on('error', sass.logError))
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(reload({ stream: true }))
 		.pipe(sourcemaps.write())
@@ -42,7 +47,13 @@ gulp.task('sass-prod', function(){
 	gulp.src('public/sass/**/*.scss')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+		.pipe(sass({ 
+			style: 'compressed',
+			includePaths: [
+				'bower_components/susy/sass',
+				'bower_components/breakpoint-sass/stylesheets'
+		  	]
+		 }).on('error', sass.logError))
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(reload({ stream: true }))
 		.pipe(minifyCss({ compatibility: 'ie8'}))
@@ -53,7 +64,7 @@ gulp.task('sass-prod', function(){
 
 gulp.task('browser-sync', function(){
 	browserSync.init(null, {
-		proxy: 'http://localhost:3333',
+		proxy: 'http://localhost:3000',
 				port: 7000,
 	});
 });
