@@ -1,5 +1,5 @@
-@import "susy";
 @import "breakpoint";
+@import "susy";
 
 /**
 *
@@ -92,30 +92,33 @@ a {
 /*==========  Header  ==========*/
 
 .header{
-	padding: 100px 0 260px 0;
+	padding: 80px 0 260px 0;
 
 	@include breakpoint($md) {
 		padding: 100px 0 190px 0;
 	}
 
 	&__container {
-		@include span(24);
+    // background: blue;
+		@include span(6 of 24);
+    @include prefix(4);
 		margin: 0 auto;
+    padding-bottom: 180px;
 		text-align: center;
 
 		@include breakpoint($sm) {
 			text-align: left;
-			@include span(17);
-			@include push(1);
+			@include span(16);
+			// @include push(1);
 		}
 	}
 		
 	&__logo {
-		width: 235px;
-		height: 19px;
+		width: 43px;
+		height: 25px;
 		display: inline-block;
-		margin-bottom: 2px;
-		background: url('../images/logo.png') no-repeat;
+		margin-bottom: 60px;
+		background: url('../images/logo2.png') no-repeat;
 		font: 0/0 a;
 		text-shadow: none;
 		color: transparent;
@@ -132,11 +135,33 @@ a {
 /*==========  Navigation  ==========*/
 
 .navigation {
-	@include span(24);
-	text-align: center;
+	@include span(4);
+  margin: 0 0 40px 0; 
+  // background: green;
+  // @include prefix(4);
+
+  ul {
+    list-style: none;
+
+    li {
+      float: left;
+      margin: 0 40px 0 0;
+      padding: 0;
+      font-size: 14px;
+        
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: line-through;
+      }
+    }
+  }
 	
 	@include breakpoint($sm) {
-		@include span(6 of 24 last);
+		@include span(8 of 24);
+    @include prefix(1);
 	}
 	
 	&__item--contact {
@@ -164,8 +189,8 @@ a {
 .contact { 
 	float: right;
 	margin-top: 15px;
-	padding: 10px 20px; 
 	border: 2px solid lighten(#4c4c4c, 60%);
+  padding: 10px 20px; 
 	font-size: 15px;
 	color: #999;
 
@@ -182,17 +207,51 @@ a {
 **/
 
 .project {
+
 	@include span(24);
+  &__test {
+		margin: 100px 0 80px 0;
+		@include span(3 of 12);
+    @include prefix(2);
+    @include push(2);
+
+    h2 {
+      margin: 0;
+      padding: 0
+    }
+  }
+
+  &__main-title {
+  	font-size: 20px;
+
+  }
+
+  &__designation{
+  	margin-top: 30px;
+  	font-size: 13px;
+  	font-weight: bold;
+  }
+  &__date{
+  	margin-top: -5px;
+  	font-size: 11px;
+  	color: #748291;
+  }
+
+  &__description {
+    line-height: 24px;
+  }
+
 	&__item {
 		@include span(24);
 
 		@include breakpoint($sm){
-			@include span(6 of 12);
+			@include span(5 of 12);
+      @include push(2);
 		}
 		position: relative;
 		height: 100%;
 		padding: 0;
-		margin: 0;
+		margin: 0 0 180px 0;
 
 		&:hover{
 			.project__details {
@@ -269,7 +328,7 @@ a {
 	}
 
 	&__image {
-		display: block;
+		// display: block;
 		height: auto;
 		max-width: 100%;
 		vertical-align: middle;
@@ -283,12 +342,11 @@ a {
 	&-info {
 		@include span(22);
 		@include push(1);
-
 		margin-bottom: 40px;
 		
 		@include breakpoint($sm){
-			@include span(6);
-			@include push(1);
+			@include span(5);
+			@include push(4);
 		}
 
 		&__viewer__title{
@@ -327,7 +385,7 @@ a {
 		padding-bottom: 100px;
 
 		@include breakpoint($sm) {
-			@include span(16 of 24);
+			@include span(12 of 24);
 		}
 
 		img {
@@ -532,7 +590,7 @@ a {
 
 .fixed {
 	position: fixed;
-	@include span(6);
+	@include span(5);
 	top: 0; 
 }
 
@@ -583,6 +641,100 @@ textarea[type="text"]:focus::-webkit-input-placeholder  {
 }
 
 
+.intro__hi {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
 
+.intro {
+  line-height: 34px;
+  font-size: 20px;
+
+  :link {
+    text-decoration: none;
+  }
+}
+
+.pills li .active {
+	color: pink;
+}
+
+#contact-page {
+	@include breakpoint($sm) {
+		text-align: center;
+		@include span(16);
+		@include push(4);
+	}
+
+	a {
+		font-size: 24px;
+	}
+}
+
+#about-page {
+	@include breakpoint($sm) {
+		text-align: left;
+		@include span(16);
+		@include push(4);
+	}
+
+	&__sidebar {
+		@include span(6);
+		min-height: 800px;
+
+		h3 {
+			margin-bottom: 20px;
+		}
+
+		a {
+			text-decoration: underline;
+			color: black;
+
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin: 16px 0;
+
+				a {
+					text-decoration: underline;
+					color: black;
+				}
+			}
+		}
+	}
+
+	&__main{
+		@include span(14);
+		@include push(3);
+		margin-top: -40px;
+		
+		a {
+			color: black;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 30px;
+			margin: 30px 0;
+		}
+	}
+
+}
+
+.elsewhere {
+	margin-top: 60px;
+}
+
+.footer {
+	@include span(24);
+	text-align: center;
+	padding: 20px 0;
+	font-size: 10px;
+}
 
 

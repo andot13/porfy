@@ -2,101 +2,164 @@ extends layout
 
 block content
 
-	section.header
-		header.header__container
-			a(href="/")
-				h1.header__logo  Andy Aparece
-			h3.header__designation Designer / Frontend
-		nav.navigation
-			a(href="").navigation__item--contact Contact me
-	div.project__viewer
-		script(id="project-view-template", type="text/template")
-			div.project__viewer-info
-				div.project__viewer-info--non-fixed
-					h2 {{= projectTitle }}
-					p {{= projectDescription }}
-					p url: 
-						a(href="{{= projectUrl }}") {{= projectUrl }}
-					{{ if(projectRoles.length > 0) { }}
-					h3 Responsibilities
-					ul 
-						{{ for(var role in projectRoles) { }}
-						li {{= projectRoles[role] }}
-						{{ } }}
-						{{ } }}
-			div.project__viewer-images
-				{{ if(projectScreen1) { }}
-				div
-					img.img-responsive(src="{{=projectScreen1}}")
-				{{ } }}
-				{{ if(projectScreen2) { }}
-				div
-					img.img-responsive(src="{{=projectScreen2}}")
-				{{ } }}
-				{{ if(projectScreen3) { }}
-				div
-					img.img-responsive(src="{{=projectScreen3}}")
-				{{ } }}
-				{{ if(projectScreen4) { }}
-				div
-					img.img-responsive(src="{{=projectScreen4}}")
-				{{ } }}
-				{{ if(projectScreen5) { }}
-				div
-					img.img-responsive(src="{{=projectScreen5}}")
-				{{ } }}
-				{{ if(projectScreen6) { }}
-				div.col-lg-6.project-image-container
-					img.img-responsive(src="{{=projectScreen6}}")
-				{{ } }}
-				{{ if(projectScreen7) { }}
-				div.col-lg-6.project-image-container
-					img.img-responsive(src="{{=projectScreen7}}")
-				{{ } }}
-				{{ if(projectScreen8) { }}
-				div
-					img.img-responsive(src="{{=projectScreen8}}")
-				{{ } }}
-				{{ if(projectScreen9) { }}
-				div
-					img.img-responsive(src="{{=projectScreen9}}")
-				{{ } }}
-				{{ if(projectScreen10) { }}
-				div.col-lg-12.project-image-container
-					img.img-responsive(src="{{=projectScreen10}}")
-				{{ } }}
+  section.header
+    header.header__container
+      a(href="/")
+        h1.header__logo  Andy Aparece
+      div.intro-container
+        h2.intro__hi Hi, I'm Andy Aparece.
+        h3.intro 
+          |Product Designer at 
+          |<a href="http://classcover.com.au" target="_blank">ClassCover</a>
+          |, focusing on design systems.
+          br 
+          |Previously at 
+          | <a href="http://optibooks.com.au" target="_blank">Optibooks </a>
+          | as Lead designer and front-end developer.
+    nav.navigation
+      ul.pills
+        li.work-pill
+          a(href="/") Work
+        li.about-pill 
+          a About
+        li.contact-pill
+          a Contact
 
-	section.project
-		script(id="project-template", type="text/template")
-			div.project__item
-				div.project__details
-					h2.project__title {{= projectTitle }}
-					a.project__view(href="/project/{{= projectTitle }}", data-id="{{ projectTitle }}") Take a look 
-				img.project__image(src='{{= projectImage }}') 
-	script(id="contact-form", type="text/template")
-		header.contact__header
-			a.close(href="#")
-				img(src="/images/close.svg", onerror="this.onerror=null; this.src='/images/close.png'") 
-		section
-			div.contact__form-container
-				h1 Get in touch
-				form(class="contact-form", action="/contact", method="post")
-					div.form-group
-						input.contact__form-container__input--text(name="name" type="text" placeholder="Your name")
-					div.form-group
-						input.contact__form-container__input--text(name="email" type="text" placeholder="Email")
-					div.form-group
-						textarea.contact__form-container__input--textarea(name="message" type="text" placeholder="Please leave your message")
-					div.form-group
-						input.submit.contact__form-container__input--submit(type="submit" value="Send message")
-						span.flash-message.hidden Thank you! Your message has been sent.
-			aside.contact__sidebar
-				div.contact__sidebar-container.contact__sidebar-container--skype
-					p Skype
-					a(href="") andy.aparece
-				div.contact__sidebar-container.contact__sidebar-container--email
-					p Email
-					a(href="") andy.aparece@gmail.com
-				div.contact__sidebar-container.contact__sidebar-container--elsewhere
-					p Elsewhere
+
+  div#work-page.pages 
+    div.project__viewer
+      script(id="project-view-template", type="text/template")
+        div.project__viewer-info
+          div.project__viewer-info--non-fixed
+            h2 {{= projectTitle }}
+            p {{= projectDescription }}
+            p url: 
+              a(href="{{= projectUrl }}") {{= projectUrl }}
+            {{ if(projectRoles.length > 0) { }}
+            h3 Responsibilities
+            ul 
+              {{ for(var role in projectRoles) { }}
+              li {{= projectRoles[role] }}
+              {{ } }}
+              {{ } }}
+        div.project__viewer-images
+          {{ if(projectScreen1) { }}
+          div
+            img.img-responsive(src="{{=projectScreen1}}")
+          {{ } }}
+          {{ if(projectScreen2) { }}
+          div
+            img.img-responsive(src="{{=projectScreen2}}")
+          {{ } }}
+          {{ if(projectScreen3) { }}
+          div
+            img.img-responsive(src="{{=projectScreen3}}")
+          {{ } }}
+          {{ if(projectScreen4) { }}
+          div
+            img.img-responsive(src="{{=projectScreen4}}")
+          {{ } }}
+          {{ if(projectScreen5) { }}
+          div
+            img.img-responsive(src="{{=projectScreen5}}")
+          {{ } }}
+          {{ if(projectScreen6) { }}
+          div.col-lg-6.project-image-container
+            img.img-responsive(src="{{=projectScreen6}}")
+          {{ } }}
+          {{ if(projectScreen7) { }}
+          div.col-lg-6.project-image-container
+            img.img-responsive(src="{{=projectScreen7}}")
+          {{ } }}
+          {{ if(projectScreen8) { }}
+          div
+            img.img-responsive(src="{{=projectScreen8}}")
+          {{ } }}
+          {{ if(projectScreen9) { }}
+          div
+            img.img-responsive(src="{{=projectScreen9}}")
+          {{ } }}
+          {{ if(projectScreen10) { }}
+          div.col-lg-12.project-image-container
+            img.img-responsive(src="{{=projectScreen10}}")
+          {{ } }}
+
+    section.project
+      script(id="project-template", type="text/template")
+        div.project__test 
+          h2.project__main-title {{= projectTitle }}
+          p.project__description {{= projectDescription}} 
+          p.project__designation {{= projectDesignation }}
+          p.project__date {{= projectDate }}
+        div.project__item
+          div.project__details
+            h2.project__title {{= projectTitle }}
+            a.project__view(href="/project/{{= projectTitle }}", data-id="{{ projectTitle }}") Take a look 
+          img.project__image(src='{{= projectImage }}') 
+
+  div#about-page.pages 
+    div#about-page__sidebar 
+      img(src="images/avatar.png")
+      h3 Get in touch
+      p
+        | <a href="mailto:andy.aparece@gmail.com">andy.aparece@gmail.com</a>
+      div.elsewhere
+        h3 Elsewhere
+        ul
+          li 
+            a(href="https://dribbble.com/andyaparece" target="_blank") Dribbble
+          li 
+            a(href="https://instagram.com/andyaparece/" target="_blank") Instagram 
+          li 
+            a(href="https://twitter.com/andyaparece" target="_blank") Twitter 
+    div#about-page__main 
+      h2 About
+      p
+        |Andy Aparece is a Product Designer and Front-end Developer based in Davao, Philippines. He is passionate about good design and best practices.
+      p
+        |For the past ten years, he’s been dabbling design and web. Helping wide range of clients improve their products by solving core problems through visual designs, interaction design, prototyping and front-end development.
+      p
+        | On the side, Andy co-organized 
+        a(href="https://www.meetup.com/Sketch-Design-Davao/" target="_blank") Sketch and Design Meetup Davao
+        |, a meetup for fellow designers to share knowledge, workflow, tips and tricks.
+      p
+        | When he's not designing, Andy likes longboarding. He usually goes out to appreciate arts and nature. 
+        | He is currently learning how to catch a wave and hanging out with good people.
+      p 
+        | He loves playing fetch with his dog, Frosty.
+  div#contact-page.pages
+    h2 Get in touch, email me at 
+    | <a href="mailto:andy.aparece@gmail.com">andy.aparece@gmail.com</a>
+
+
+
+  script(id="contact-form", type="text/template")
+    header.contact__header
+      a.close(href="#")
+        img(src="/images/close.svg", onerror="this.onerror=null; this.src='/images/close.png'") 
+    section
+      div.contact__form-container
+        h1 Get in touch
+        form(class="contact-form", action="/contact", method="post")
+          div.form-group
+            input.contact__form-container__input--text(name="name" type="text" placeholder="Your name")
+          div.form-group
+            input.contact__form-container__input--text(name="email" type="text" placeholder="Email")
+          div.form-group
+            textarea.contact__form-container__input--textarea(name="message" type="text" placeholder="Please leave your message")
+          div.form-group
+            input.submit.contact__form-container__input--submit(type="submit" value="Send message")
+            span.flash-message.hidden Thank you! Your message has been sent.
+      aside.contact__sidebar
+        div.contact__sidebar-container.contact__sidebar-container--skype
+          p Skype
+          a(href="") andy.aparece
+        div.contact__sidebar-container.contact__sidebar-container--email
+          p Email
+          a(href="") andy.aparece@gmail.com
+        div.contact__sidebar-container.contact__sidebar-container--elsewhere
+          p Elsewhere
+
+
+  section.footer <3
 
