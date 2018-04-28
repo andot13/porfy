@@ -136,12 +136,17 @@ a {
 /*==========  Navigation  ==========*/
 
 .navigation {
-	@include span(24);
-  margin: 0 0 40px 0; 
-  //background: green;
-  // @include prefix(4);
+	@include span(23);
+	background: white;
+	position: fixed;
+	top: 0;
+	@include prefix(1);
+	z-index: 2;
+
 
 	@include breakpoint($sm) {
+		position: relative;
+		right: 0;
 		@include span(8 of 24);
     //@include prefix(1);
     margin: 0 0 40px 0; 
@@ -150,12 +155,13 @@ a {
 
   ul {
     list-style: none;
+
     li {
-    	text-align: center;
-       	padding: 20px;
+    	float: left;
+      padding: 20px;
 
     	@include breakpoint($sm) {
-	      float: left;
+	      // float: left;
 	      margin: 0 40px 0 0;
 	      padding: 0;
 	      font-size: 14px;
@@ -692,15 +698,28 @@ textarea[type="text"]:focus::-webkit-input-placeholder  {
 .intro__hi {
   font-size: 20px;
   margin-bottom: 40px;
+  @include prefix(2);
+  text-align: left;
+
+  @include breakpoint($sm) {
+  	@include prefix(0);
+  }
 }
 
 .intro {
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 17px;
+	line-height: 30px;
+	text-align: left;
+	@include prefix(2);
+	@include span(23);
+	margin-bottom: 80px;
+
 	
 	@include breakpoint($sm) {
   	line-height: 34px;
+		@include prefix(0);
   	font-size: 20px;
+  	margin-bottom: 0;
 	}
 
 
