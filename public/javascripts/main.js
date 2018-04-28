@@ -218,7 +218,7 @@ $(function(){
 	var projectsCollection = new App.Collections.Projects([
 		{
 			projectTitle: 'ClassCover',
-			projectImage: '../images/cc-cover2.gif',
+			projectImage: '../images/cc-cover1.gif',
 			projectImage2: '../images/classcover-main-prototype-flinto.gif',
 			projectVideo: '../images/videos/quick-booking-invite-booking.mov',
 			projectDate: 'March 2016 - April 2018',
@@ -232,7 +232,7 @@ $(function(){
 			projectScreen3: '../images/cc-school-myteacher-empty.png',
 			projectScreen4: '../images/cc-rh2.png',
 			projectScreen5: '../images/cc-messaging.png',
-			projectScreen6: '../images/cc-booking.gif',
+			projectScreen6: '../images/cc-cover1.gif',
 			projectScreen7: '../images/cc-request-history.png',
 			projectScreen8: '../images/cc-school-taglist.png',
 			projectScreen9: '../images/cc-school-myteacher2.png',
@@ -247,7 +247,7 @@ $(function(){
 			projectDescription: 'Blackboard design system is ClassCover\'s single source of truth, ensuring consistency across the product.',
 			projectLink: '/project/classcover',
 			projectUrl: 'http://classcover.com.au',
-      projectDesignation: 'Lead Designer',
+      		projectDesignation: 'Lead Designer',
 			projectRoles: ["Lead Designer", "Design Systems"],
 			projectScreen1: '../images/bb-color.png',
 			projectScreen2: '../images/bb-typography.png',
