@@ -787,7 +787,7 @@ ul.pills {
 
 		@include breakpoint($md) {
 			@include span(15);
-			@include push(3);
+			@include push(2);
 			margin-top: -40px;
 		}
 		
