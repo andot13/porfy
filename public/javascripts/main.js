@@ -224,7 +224,7 @@ $(function(){
 			projectDescription: 'Linkhero link management tool for marketers',
 			projectLink: '/project/linkhero',
 			projectUrl: '',
-      projectDesignation: 'Designer',
+      projectDesignation: 'Product Designer',
 			projectRoles: ["Branding", "UI design", "Logo design", "Web design"],
 			projectScreen1: '../images/project-7.png',
 			projectScreen2: '../images/project-7-screen1.png',
