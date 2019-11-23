@@ -225,7 +225,7 @@ $(function(){
 			projectLink: '/project/linkhero',
 			projectUrl: '',
       projectDesignation: 'Designer',
-			projectRoles: ["Branding", "Visual design", "Logo design", "Web design", "Front-end development"],
+			projectRoles: ["Branding", "UI design", "Logo design", "Web design"],
 			projectScreen1: '../images/project-7.png',
 			projectScreen2: '../images/project-7-screen1.png',
 			projectScreen3: '../images/project-7-screen2.png',
