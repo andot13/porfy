@@ -228,7 +228,7 @@ $(function(){
 			projectRoles: ["Branding", "Visual design", "Logo design", "Web design", "Front-end development"],
 			projectScreen1: '../images/project-7.png',
 			projectScreen2: '../images/project-7-screen1.png',
-			projectScreen3: '../images/project-7-screen3.png',
+			projectScreen3: '../images/project-7-screen2.png',
 			projectScreen4: '../images/project-7-screen4.png',
 			projectScreen5: '../images/project-7-screen5.png',
 			projectScreen6: '',
