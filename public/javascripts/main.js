@@ -217,6 +217,27 @@ $(function(){
 
 	var projectsCollection = new App.Collections.Projects([
 		{
+			projectTitle: 'Linkhero',
+			projectImage: '../images/project-7.png',
+			projectImage2: '../images/classcover-main-prototype-flinto.gif',
+			projectDate: '2019',
+			projectDescription: 'Linkhero link management tool for marketers',
+			projectLink: '/project/linkhero',
+			projectUrl: 'http://google.com',
+      projectDesignation: 'Designer',
+			projectRoles: ["Branding", "Visual design", "Logo design", "Web design", "Front-end development"],
+			projectScreen1: '../images/project-7-screen1.png',
+			projectScreen2: '../images/project-7-screen2.png',
+			projectScreen3: '../images/project-7-screen3.png',
+			projectScreen4: '../images/project-7-screen4.png',
+			projectScreen5: '../images/project-7-screen5.png',
+			projectScreen6: '../images/project-7-screen6.png',
+			projectScreen7: '../images/project-7-screen7.png',
+			projectScreen8: '',
+			projectScreen9: '',
+			projectScreen10: ''
+		},
+		{
 			projectTitle: 'ClassCover',
 			projectImage: '../images/cc-cover1.gif',
 			projectImage2: '../images/classcover-main-prototype-flinto.gif',
