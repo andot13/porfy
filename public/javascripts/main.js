@@ -217,6 +217,27 @@ $(function(){
 
 	var projectsCollection = new App.Collections.Projects([
 		{
+			projectTitle: 'Ayyo',
+			projectImage: '../images/ayyo-preview.png',
+			projectImage2: '',
+			projectDate: '2019',
+			projectDescription: 'Grocery delivery app landing page',
+			projectLink: '/project/ayyo',
+			projectUrl: '',
+			projectDesignation: 'Designer',
+			projectRoles: ["Web design"],
+			projectScreen1: '../images/ayyo.png',
+			projectScreen2: '',
+			projectScreen3: '',
+			projectScreen4: '',
+			projectScreen5: '',
+			projectScreen6: '',
+			projectScreen7: '',
+			projectScreen8: '',
+			projectScreen9: '',
+			projectScreen10: ''
+		},
+		{
 			projectTitle: 'Linkhero',
 			projectImage: '../images/project-7-screen2.png',
 			projectImage2: '../images/classcover-main-prototype-flinto.gif',
@@ -224,7 +245,7 @@ $(function(){
 			projectDescription: 'Linkhero link management tool for marketers',
 			projectLink: '/project/linkhero',
 			projectUrl: '',
-      projectDesignation: 'Product Designer',
+			projectDesignation: 'Product Designer',
 			projectRoles: ["Branding", "UI design", "Logo design", "Web design"],
 			projectScreen1: '../images/project-7.png',
 			projectScreen2: '../images/project-7-screen1.png',
