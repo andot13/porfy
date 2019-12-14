@@ -217,6 +217,27 @@ $(function(){
 
 	var projectsCollection = new App.Collections.Projects([
 		{
+			projectTitle: 'LifeSuccess',
+			projectImage: '../images/lifesuccess-animation.gif',
+			projectImage2: '',
+			projectDate: '2019',
+			projectDescription: 'Self development app landing page',
+			projectLink: '/project/lifesuccess',
+			projectUrl: '',
+			projectDesignation: 'Designer',
+			projectRoles: ["Web design, Prototype"],
+			projectScreen1: '../images/lifesuccess.png',
+			projectScreen2: '',
+			projectScreen3: '',
+			projectScreen4: '',
+			projectScreen5: '',
+			projectScreen6: '',
+			projectScreen7: '',
+			projectScreen8: '',
+			projectScreen9: '',
+			projectScreen10: ''
+		},
+		{
 			projectTitle: 'Ayyo',
 			projectImage: '../images/ayyo-preview.png',
 			projectImage2: '',
